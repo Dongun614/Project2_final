@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./mycss.css">
+</head>
+<script>
+    var selectedRow = null;
+    function onFormSubmit() {
+        event.preventDefault();
+        var formData = readFormData();
+        if(selectedRow === null){
+            insertNewRecord(formData)
+        }
+        else{
+
+        }
+    }
+
+    function readFormData() {
+        var formData = {};
+        formData["No"] = document.getElementById("No").value;
+        formData["singerName"] = document.getElementById("singerName").value;
+        formData["singTitle"] = document.getElementById("singTitle").value;
+        formData["time"] = document.getElementById("time").value;
+        return formData;
+    }
+
+    function insertNewRecord(data) {
+        var table = document.getElementById("storelabel").getElementsByTagName("tbody")[0];
+        var newRow = table.insertRow(table.length);
+
+        var cell0 = newRow.insertCell(0);
+        cell0.innerHTML = data.No;
+
+        var cell1 = newRow.insertCell(1);
+        cell1.innerHTML = data.singerName;
+
+        var cell2 = newRow.insertCell(2);
+        cell2.innerHTML = data.singTitle;
+
+        var cell3 = newRow.insertCell(3);
+        cell3.innerHTML = data.time;
+    }
+</script>
+
+<body>
+    <div>
+        <div class="header">
+            <p>header</p>
+        </div>
+        <div class="add-button-div">
+            <button class="add-button"><a href="add.html">add</a></button>
+        </div>
+        <div class="centering">
+            <table class="table" id="storelabel">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>가수 이름</th>
+                        <th>노래 제목</th>
+                        <th>노래 길이</th>
+                        <th>Menu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <form autocomplete="off" onsubmit="onFormSubmit()">
+                <div>
+                    <label for="No">No</label>
+                    <input type="text" name="No" id="No"/>
+                </div>
+                <div>
+                    <label for="singerName">가수 이름</label>
+                    <input type="text" name="singerName" id="singerName"/>
+                </div>
+                <div>
+                    <label for="singTitle">노래 제목</label>
+                    <input type="text" name="singTitle" id="singTitle"/>
+                </div>
+                <div>
+                    <label for="time">노래 길이</label>
+                    <input type="text" name="time" id="time"/>
+                </div>
+                <div><input type="submit" value="등록"></div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
