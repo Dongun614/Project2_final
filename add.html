@@ -5,71 +5,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" herf="./mycss.css">
+    <link rel="stylesheet" href="./mycss.css">
     <title>Document</title>
 </head>
 <script>
-    var selectedRow = null;
-    function onFormSubmit() {
-        event.preventDefault();
-        var formData = readFormData();
-        if(selectedRow === null){
-            insertNewRecord(formData)
+    function submitted(){
+        if(document.getElementById("No").value == ""){
+            alert("No 값을 입력해주세요!");
+            document.getElementById("No").focus();
+            return false;
+        }
+        else if(document.getElementById("singerName").value == ""){
+            alert("가수이름을 입력해주세요!");
+            document.getElementById("singerName").focus();
+            return false;
+        }
+        else if(document.getElementById("singTitle").value == ""){
+            alert("노래 제목을 입력해주세요!");
+            document.getElementById("singTitle").focus();
+            return false;
+        }
+        else if(document.getElementById("time").value == ""){
+            alert("노래 길이을 입력해주세요!");
+            document.getElementById("time").focus();
+            return false;
         }
         else{
-
+            alert("게시물이 추가됩니다");
+            window.location.href="index.html";
+            return false;
         }
-    }
-
-    function readFormData() {
-        var formData = {};
-        formData["No"] = document.getElementById("No").value;
-        formData["singerName"] = document.getElementById("singerName").value;
-        formData["singTitle"] = document.getElementById("singTitle").value;
-        formData["time"] = document.getElementById("time").value;
-        return formData;
-    }
-
-    function insertNewRecord(data) {
-        var table = document.getElementById("storelabel").getElementsByTagName("tbody")[0];
-        var newRow = table.insertRow(table.length);
-
-        var cell0 = newRow.insertCell(0);
-        cell0.innerHTML = data.No;
-
-        var cell1 = newRow.insertCell(1);
-        cell1.innerHTML = data.singerName;
-
-        var cell2 = newRow.insertCell(2);
-        cell2.innerHTML = data.singTitle;
-
-        var cell3 = newRow.insertCell(3);
-        cell3.innerHTML = data.time;
     }
 </script>
 
 <body>
-    <div>
-        <form autocomplete="off" onsubmit="onFormSubmit()">
-            <div>
+    <fieldset>
+        <legend>노래 추가</legend>
+        <form onsubmit="return submitted()" class="centering">
+            <div class="add-form">
+            <div class="sort-deco">
                 <label for="No">No</label>
-                <input type="text" name="No" id="No"/>
-            </div>
-            <div>
                 <label for="singerName">가수 이름</label>
-                <input type="text" name="singerName" id="singerName"/>
-            </div>
-            <div>
                 <label for="singTitle">노래 제목</label>
-                <input type="text" name="singTitle" id="singTitle"/>
-            </div>
-            <div>
                 <label for="time">노래 길이</label>
-                <input type="text" name="time" id="time"/>
             </div>
-            <div><input type="submit" value="등록" onclick="submitted()"></div>
+            <div class="sort-deco">
+                <input type="text" name="No" id="No" class="textbox"/>
+                <input type="text" name="singerName" id="singerName" class="textbox"/>
+                <input type="text" name="singTitle" id="singTitle" class="textbox"/>
+                <input type="text" name="time" id="time" class="textbox"/>
+            </div>
+        </div>
+            <div><input type="submit" value="등록"></div>
         </form>
-    </div>
+    </fieldset>
 </body>
 
 </html>
