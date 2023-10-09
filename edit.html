@@ -10,17 +10,12 @@
 
 <script>
     function editting(){
-        alert("수정 페이지로 이동합니다");
-        window.location.href = "edit.html";
-        return false;
-    }
-    function deletting(){
-        var recheck = confirm("정말로 삭제하시겠습니까?");
+        var recheck = confirm("게시물을 수정할까요?");
         if(recheck == true){
-            alert("삭제되었습니다!");
-            window.location.href = "index.html";
-            return false;
+            alert("수정되었습니다!");
         }
+        window.location.href="index.html";
+        return false;
     }
 </script>
 
@@ -35,10 +30,7 @@
             </fieldset>
             <div>
                 <button onclick="editting()" class="edit-button">
-                    Edit
-                </button>
-                <button onclick="deletting()" class="delete-button">
-                    Delete
+                    수정
                 </button>
             </div>
         </div>

@@ -60,16 +60,18 @@ th,td{
 }
 
 .edit-button{
-    border: none;
-    outline: none;
+    width: 50px;
+    margin-bottom: 5px;
+    border-color: white;
     background-color: black;
     color: white;
     border-radius: 4px;
 }
 
 .delete-button{
-    border: none;
-    outline: none;
+    width: 60px;
+    margin-bottom: 5px;
+    border-color: white;
     background-color: black;
     color: white;
     border-radius: 4px;
@@ -92,6 +94,7 @@ th,td{
  fieldset{
     border-radius: 5px;
     border: 1px double white;
+    margin-bottom: 10px;
  }
 
  .add-form{
