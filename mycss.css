@@ -29,7 +29,7 @@ body {
     justify-content: right;
 }
 
-.add-button-div :hover{
+.add-button-div:hover{
     cursor: pointer;
 }
 
@@ -40,6 +40,11 @@ body {
     background-color: black;
     color: white;
     border-radius: 4px;
+}
+
+.add-button:hover{
+    cursor: pointer;
+    text-decoration: color(lightseagreen)
 }
 
 table {
@@ -54,7 +59,7 @@ th,td{
     border-radius: 4px;
 }
 
-.hovering :hover{
+.hovering:hover{
     cursor: pointer;
     color: lightseagreen;
 }
@@ -77,13 +82,12 @@ th,td{
     border-radius: 4px;
 }
 
-.edit-button :hover{
-    text-decoration: underline;
-    text-decoration-color: lightseagreen;
+.edit-button:hover{
+    cursor: pointer;
 }
 
-.delete-button :hover{
-    border: 1px solid lightseagreen;
+.delete-button:hover{
+    cursor: pointer;
 }
 
 /*================================ ADD.html ==================================================*/
@@ -112,4 +116,40 @@ th,td{
  .sort-flex{
     display: flex;
     margin-bottom: 10px;
+    align-items: center;
+
+ }
+
+ .add-submit{
+    
+ }
+
+ /*================================= EDIT.html =======================================*/
+
+ .input-deco{
+    margin-left: 10px;
+    width: 130px;
+    height: 25px;
+ }
+
+ /*================================== Mobile ========================================*/
+ 
+ @media screen and (max-width: 767px){
+    .header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        height: 70px;
+        font-size: 40px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        color: crimson;
+    }
+
+    .hovering :hover{
+        cursor: pointer;
+        color: crimson;
+    }
  }

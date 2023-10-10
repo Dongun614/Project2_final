@@ -9,15 +9,6 @@
 </head>
 
 <script>
-    function editting() {
-        var recheck = confirm("게시물을 수정할까요?");
-        if (recheck == true) {
-            alert("수정되었습니다!");
-        }
-        window.location.href = "index.html";
-        return false;
-    }
-
     function submitting() {
         if (document.getElementById("singerName").value == "") {
             alert("가수이름을 입력해주세요!");
@@ -35,7 +26,6 @@
             return false;
         }
         else {
-            alert("게시물이 추가됩니다");
             var recheck = confirm("게시물을 수정할까요?");
             if (recheck == true) {
                 alert("수정되었습니다!");
@@ -55,15 +45,15 @@
                     <div>
                         <div class="sort-flex">
                             <p>가수 이름 - </p>
-                            <input id="singerName" type="input" value="잔나비" />
+                            <input class="input-deco" id="singerName" type="input" value="잔나비" />
                         </div>
                         <div class="sort-flex">
                             <p>노래 제목 - </p>
-                            <input id="singTitle" type="input" value="투게더" />
+                            <input class="input-deco" id="singTitle" type="input" value="투게더" />
                         </div>
                         <div class="sort-flex">
                             <p>노래 길이 - </p>
-                            <input id="time" type="input" value="3:06" />
+                            <input class="input-deco" id="time" type="input" value="3:06" />
                         </div>
                     </div>
             </fieldset>
