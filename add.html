@@ -30,6 +30,11 @@
             document.getElementById("time").focus();
             return false;
         }
+        else if(document.getElementById("mood").value == ""){
+            alert("노래 분위기를 입력해주세요!");
+            document.getElementById("mood").focus();
+            return false;
+        }
         else{
             alert("게시물이 추가됩니다");
             window.location.href="index.html";
@@ -48,12 +53,14 @@
                 <label for="singerName">가수 이름</label>
                 <label for="singTitle">노래 제목</label>
                 <label for="time">노래 길이</label>
+                <label for="mood">노래 분위기</label>
             </div>
             <div class="sort-deco">
                 <input type="text" name="No" id="No" class="textbox"/>
                 <input type="text" name="singerName" id="singerName" class="textbox"/>
                 <input type="text" name="singTitle" id="singTitle" class="textbox"/>
                 <input type="text" name="time" id="time" class="textbox"/>
+                <input type="text" name="mood" id="mood" class="textbox"/>
             </div>
         </div>
             <div><input type="submit" value="추가" class="add-submit"></div>
