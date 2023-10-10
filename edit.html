@@ -25,12 +25,17 @@
             document.getElementById("time").focus();
             return false;
         }
+        else if(document.getElementById("mood").value == ""){
+            alert("노래 분위기를 입력해주세요!");
+            document.getElementById("mood").focus();
+            return false;
+        }
         else {
             var recheck = confirm("게시물을 수정할까요?");
             if (recheck == true) {
                 alert("수정되었습니다!");
+                window.location.href = "index.html";
             }
-            window.location.href = "index.html";
             return false;
         }
     }
