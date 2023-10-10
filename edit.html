@@ -9,13 +9,40 @@
 </head>
 
 <script>
-    function editting(){
+    function editting() {
         var recheck = confirm("게시물을 수정할까요?");
-        if(recheck == true){
+        if (recheck == true) {
             alert("수정되었습니다!");
         }
-        window.location.href="index.html";
+        window.location.href = "index.html";
         return false;
+    }
+
+    function submitting() {
+        if (document.getElementById("singerName").value == "") {
+            alert("가수이름을 입력해주세요!");
+            document.getElementById("singerName").focus();
+            return false;
+        }
+        else if (document.getElementById("singTitle").value == "") {
+            alert("노래 제목을 입력해주세요!");
+            document.getElementById("singTitle").focus();
+            return false;
+        }
+        else if (document.getElementById("time").value == "") {
+            alert("노래 길이을 입력해주세요!");
+            document.getElementById("time").focus();
+            return false;
+        }
+        else {
+            alert("게시물이 추가됩니다");
+            var recheck = confirm("게시물을 수정할까요?");
+            if (recheck == true) {
+                alert("수정되었습니다!");
+            }
+            window.location.href = "index.html";
+            return false;
+        }
     }
 </script>
 
@@ -24,15 +51,26 @@
         <div>
             <fieldset>
                 <legend>상세 내용</legend>
-                <p>가수이름 - 잔나비</p>
-                <p>노래 제목 - 투게더</p>
-                <p>노래 길이 - 3:06</p>
+                <form onsubmit= "return submitting()">
+                    <div>
+                        <div class="sort-flex">
+                            <p>가수 이름 - </p>
+                            <input id="singerName" type="input" value="잔나비" />
+                        </div>
+                        <div class="sort-flex">
+                            <p>노래 제목 - </p>
+                            <input id="singTitle" type="input" value="투게더" />
+                        </div>
+                        <div class="sort-flex">
+                            <p>노래 길이 - </p>
+                            <input id="time" type="input" value="3:06" />
+                        </div>
+                    </div>
             </fieldset>
             <div>
-                <button onclick="editting()" class="edit-button">
-                    수정
-                </button>
+                <input type="submit" class="edit-button" value="수정"/>
             </div>
+            </form>
         </div>
     </div>
 </body>

@@ -108,3 +108,8 @@ th,td{
     flex-direction: column;
     margin-right: 15px;
  }
+
+ .sort-flex{
+    display: flex;
+    margin-bottom: 10px;
+ }
